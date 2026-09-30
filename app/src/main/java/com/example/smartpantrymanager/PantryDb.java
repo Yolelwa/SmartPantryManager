@@ -12,7 +12,7 @@ import java.util.List;
 public class PantryDb extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "smart_pantry.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
 
     public PantryDb(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -44,6 +44,32 @@ public class PantryDb extends SQLiteOpenHelper {
                         "quantity REAL NOT NULL," +
                         "unit TEXT NOT NULL)"
         );
+        seedRecipes(db);
+    }
+
+    private void seedRecipes(SQLiteDatabase db) {
+        db.execSQL("INSERT INTO recipes(name, step) VALUES(" + "'Tomato Omelette'," + "'Beat eggs, add chopped tomato and fry')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Cheese Omelette'," + "'Whisk eggs, add cheese and cook')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Tomato Toast'," + "'Toast bread and top with sliced tomato')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Cheese Toast'," + "'Toast bread and add cheese')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Banana Smoothie'," + "'Blend banana and milk')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Scrambled Eggs'," + "'Whisk eggs and cook in a pan')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Egg Toast'," + "'Fry egg and serve on toast')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Tomato Pasta'," + "'Cook pasta and mix with tomato')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Garlic Pasta'," + "'Cook pasta and mix with garlic')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Cheesy Pasta'," + "'Cook pasta and stir in cheese')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Tomato Rice'," + "'Cook rice and mix with tomato')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Egg fried Rice'," + "'Fry rice with egg')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Bean Rice Bowl'," + "'Serve rice with cooked beans')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Mashed Potatoes'," + "'Boil potatoes and mash')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Roast Potatoes'," + "'Roast potatoes until golden')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Banana Oats'," + "'Cook oats and add banana')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Apple Oats'," + "'Cook oats and add apple')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Tomato Bean Stew'," + "'Cook beans with tomato')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Garlic Potatoes'," + "'Cook potatoes with garlic')");
+        db.execSQL("INSERT INTO recipes(name, steps) VALUES(" + "'Simple Pancakes'," + "'Mix flour, egg and milk; cook on a pan')");
+
+
     }
 
     @Override
