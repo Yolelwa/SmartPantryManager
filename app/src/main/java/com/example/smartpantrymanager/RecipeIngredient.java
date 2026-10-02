@@ -1,16 +1,25 @@
 package com.example.smartpantrymanager;
 
 public class RecipeIngredient {
-    public String name,unit;
-    public double quantity;
-    public RecipeIngredient(String n,double q,String u){name=n;quantity=q;unit=u;}
 
-    public  String getIngredientName() {
-        return ingredientName;
+    private final String name;
+    private final double quantity;
+    private final String unit;
+
+    public RecipeIngredient(String name, double quantity, String unit) {
+        this.name = name;
+        this.quantity = quantity;
+        this.unit = unit;
     }
-    public double qetQuantity() {
+
+    public String getIngredientName() {
+        return name;
+    }
+
+    public double getQuantity() {
         return quantity;
     }
+
     public String getUnit() {
         return unit;
     }
