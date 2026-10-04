@@ -3,7 +3,6 @@ package com.example.smartpantrymanager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -28,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnRecipes = findViewById(R.id.btnRecipes);
         Button btnSettings = findViewById(R.id.btnSettings);
+        Button btnAddIngredient = findViewById(R.id.btnAddIngredient);
 
         btnRecipes.setOnClickListener(v ->
 
@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
 
         btnSettings.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, SettingsActivity.class)));
+
+        btnAddIngredient.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, AddEditIngredientActivity.class)));
     }
 
     @Override
