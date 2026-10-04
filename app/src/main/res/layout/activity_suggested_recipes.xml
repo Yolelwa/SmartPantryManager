@@ -21,4 +21,11 @@
       android:layout_height="wrap_content"
       android:text="Settings" />
 
+  <TextView
+      android:id="@+id/txtEmpty"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="No recipes match your pantry yet."
+      android:visibility="gone"/>
+
 </FrameLayout>

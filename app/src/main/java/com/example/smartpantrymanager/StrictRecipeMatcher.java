@@ -13,8 +13,7 @@ public class StrictRecipeMatcher {
                 boolean sameName = normalizeName(pantryItem.getName())
                         .equals(normalizeName(required.getIngredientName()));
 
-                boolean sameUnit = pantryItem.getUnit()
-                        .equalsIgnoreCase(required.getUnit());
+                boolean sameUnit = true;
 
                 boolean enoughQuantity =
                         pantryItem.getQuantity() >= required.getQuantity();

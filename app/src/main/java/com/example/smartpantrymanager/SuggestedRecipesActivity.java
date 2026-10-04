@@ -62,19 +62,9 @@ public class SuggestedRecipesActivity extends AppCompatActivity {
     private void loadSuggestions() {
 
         suggestedRecipes.clear();
-        suggestedRecipes.add(
-                new Recipe(
-                        1,
-                        "Tomato Omelette",
-                        "Beat eggs and cook with tomato."
-                )
-        );
-        suggestedRecipes.add(
-                new Recipe(
-                        2,
-                        "Cheese Toast",
-                        "Toast bread and add cheese."
-                )
+        suggestedRecipes.addAll(
+             db.getAllRecipes()
+
         );
         recipeAdapter.notifyDataSetChanged();
 
